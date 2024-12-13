@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from collections import defaultdict
 from keras.models import Sequential, Model
-from keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional, Merge, Input, BatchNormalization, Flatten
+from keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional, Concatenate, Input, BatchNormalization, Flatten
 from keras.optimizers import RMSprop,Adamax
 from keras.callbacks import EarlyStopping
 from keras.regularizers import l1, l2
@@ -72,7 +72,7 @@ train_ids = mosi.train()
 valid_ids = mosi.valid()
 test_ids = mosi.test()
 
-bimodal = Dataset.merge(embeddings, covarep)
+bimodal = Concatenate(axis=-1)([embeddings, covarep])
 dataset = bimodal.align('embeddings')
 
 # Some data preprocessing
