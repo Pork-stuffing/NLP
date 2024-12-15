@@ -1,5 +1,8 @@
 # Multimodal sentiment analysis with multi-task learning
 
+代码的复现参考了原仓库，https://github.com/tianleimin/ACL2018-MultimodalMultitaskSentimentAnalysis.git。
+做出了创新的尝试，但是效果并不明显
+
 **Unimodal and multimodal uni-task, bi-task, and tri-task learning models for sentiment analysis using the CMU-MOSI database.**
 
 * In uni-task models we perform regression experiments to predict sentiment scores.
